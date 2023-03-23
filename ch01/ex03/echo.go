@@ -1,24 +1,24 @@
 package main
 
 import (
-	"fmt"
 	"os"
+	"strings"
 )
 
-func echo() {
-	fmt.Println(os.Args[1:])
+func echo(args []string) string {
+	return strings.Join(args, " ")
 }
 
-func slow_echo() {
+func slow_echo(args []string) string {
 	s, sep := "", ""
-	for _, str := range os.Args[1:] {
+	for _, str := range args {
 		s += sep + str
 		sep = " "
 	}
-	fmt.Println(s)
+	return s
 }
 
 func main() {
-	echo()
-	slow_echo()
+	echo(os.Args[1:])
+	slow_echo(os.Args[1:])
 }
