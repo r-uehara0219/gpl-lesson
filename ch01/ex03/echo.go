@@ -6,7 +6,7 @@ import (
 )
 
 func echo() {
-	fmt.Println(os.Args)
+	fmt.Println(os.Args[1:])
 }
 
 func slow_echo() {
