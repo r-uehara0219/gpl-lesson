@@ -1,0 +1,8 @@
+BenchmarkEcho-8   	   10000	    115095 ns/op	     152 B/op	       9 allocs/op
+PASS
+ok  	gpl-lesson/ch01/ex03	1.446s
+
+BenchmarkSlowEcho-8
+   12936	     88186 ns/op	     576 B/op	       7 allocs/op
+PASS
+ok  	gpl-lesson/ch01/ex03	2.231s
