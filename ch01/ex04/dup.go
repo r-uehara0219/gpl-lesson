@@ -21,7 +21,7 @@ import (
 )
 
 func main() {
-		counts := make(map[string]int)
+	counts := make(map[string]int)
 	detected_files := make(map[string]map[string]bool)
 	files := os.Args[1:]
 	if len(files) == 0 {
@@ -40,7 +40,7 @@ func main() {
 	for line, n := range counts {
 		if n > 1 {
 			fmt.Printf("%d\t%s\n", n, line)
-			for file_name, _ := range detected_files[line] {
+			for file_name := range detected_files[line] {
 				fmt.Printf("%s ", file_name)
 			}
 			fmt.Printf("\n")
