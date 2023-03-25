@@ -1,1 +1,1 @@
-# gpl-lesson
+see: http://www.gopl.io/
