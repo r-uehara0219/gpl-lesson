@@ -21,10 +21,15 @@ func PopCount(x uint64) int {
 		pc[byte(x>>(7*8))])
 }
 
-func PopCountWithLoop(x uint64) int {
-	var n int
-	for i := 0; i < 8; i++ {
-		n += int(pc[byte(x>>(uint(i)*8))])
+// ex) 10101 & 10100 = 10100
+// ex) 10100 & 10011 = 10000
+// ex) 10000 & 01111 = 00000
+// => 10101 has 3 bits
+func PopCountByClearing(x uint64) int {
+	count := 0
+	for x != 0 {
+		x = x & (x - 1)
+		count++
 	}
-	return n
+	return count
 }
