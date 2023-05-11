@@ -38,6 +38,7 @@ func main() {
 	fmt.Println("</svg>")
 }
 
+// いずれかの値が無効ならtrueを返す
 func isSomeInvalid(values ...float64) bool {
 	for _, v := range values {
 		if isInvalid(v) {
@@ -67,6 +68,6 @@ func corner(i, j int) (float64, float64) {
 
 func f(x, y float64) float64 {
 	r := math.Hypot(x, y) // distance from (0,0)
-	height := math.Sin(r) / r
+	height := math.Log2(r) / r
 	return height
 }
